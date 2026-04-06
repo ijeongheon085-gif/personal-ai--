@@ -6,9 +6,9 @@ from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 
-st.set_page_config(page_title="AI 이정헌", page_icon="🤖")
-st.title("🤖 Persomal AI 이정헌")
-st.write("내 데이터를 기반으로 만든 개인 AI 챗봇")
+st.set_page_config(page_title="PERSOMAL AI", page_icon="🤖")
+st.title("🤖 Persomal AI")
+st.write("지식재산권의 이해 과제_AI 챗봇")
 
 files = [
     "about_me.txt",
@@ -47,7 +47,7 @@ for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-user_input = st.chat_input("AI 이정헌에게 질문해보세요")
+user_input = st.chat_input("PERSOMAL AI에게 질문해보세요")
 
 if user_input:
     st.session_state.messages.append({"role": "user", "content": user_input})
@@ -60,7 +60,7 @@ if user_input:
 
     prompt = f"""
 너는 이정헌이다.
-아래 참고 정보를 바탕으로 자연스럽고 짧게 답해라.
+아래 참고 정보를 바탕으로 자연스럽고 답해라.
 반말로 편하게 말하고, 친구처럼 대화해라.
 참고 정보에 없는 내용은 과하게 지어내지 마라.
 
